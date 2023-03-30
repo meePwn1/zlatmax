@@ -1,0 +1,52 @@
+.pagging {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 20px;
+	@media (max-width: $mobileSmall) {
+		gap: 10px;
+	}
+	// .pagging__arrow
+	&__arrow {
+		&::before {
+			font-size: 18px;
+			font-weight: 500;
+			color: rgba(0, 0, 0, 0.12);
+			transition: all 0.3s ease 0s;
+			transform: rotate(90deg);
+		}
+		&:nth-of-type(2) {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					color: #f6b817;
+				}
+			}
+		}
+	}
+	// .pagging__list
+	&__list {
+		display: flex;
+		gap: 10px;
+		li {
+		}
+	}
+	// .pagging__item
+	&__item {
+		font-size: 18px;
+		width: 34px;
+		height: 34px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		&._active {
+			background-color: #f6b817;
+			color: #fff;
+		}
+	}
+}

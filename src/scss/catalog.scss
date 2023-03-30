@@ -1,0 +1,211 @@
+.header-page {
+	// .header-page__container
+	&__container {
+	}
+	// .header-page__title
+	&__title {
+		margin-bottom: 25px;
+	}
+	// .header-page__breadcrumbs
+	&__breadcrumbs {
+	}
+}
+//========================================================================================================================================================
+.catalog {
+	@include adaptiveValue("padding-bottom", 120, 45);
+	background-color: #fefefe;
+	// .catalog__container
+	&__container {
+	}
+	// .catalog__body
+	&__body {
+		@media (min-width: $tablet) {
+			display: flex;
+			gap: 30px;
+		}
+	}
+	// .catalog__filter
+	&__filter {
+		align-self: flex-start;
+		flex: 0 0 375px;
+		@media (max-width: $tablet) {
+			margin-bottom: 30px;
+		}
+	}
+	// .catalog__content
+	&__content {
+		@media (min-width: $tablet) {
+			flex: 1 1 auto;
+			margin-top: -60px;
+		}
+	} // .catalog__control
+	&__control {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 20px;
+	}
+	// .catalog__products
+	&__products {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 30px;
+		margin-bottom: rem(60);
+	}
+	// .catalog__footer
+	&__footer {
+		@media (min-width: $tablet) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	// .catalog__more
+	&__more {
+		background-color: #fefefe;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 600;
+		color: #e8aa31;
+		border: 2px solid #e8aa31;
+		box-shadow: unset;
+		@media (max-width: $tablet) {
+			width: 100%;
+			margin-bottom: 30px;
+		}
+	}
+}
+.filter {
+	background-color: #fefefe;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+	// .filter__title
+	&__title {
+		padding: 0 30px;
+		min-height: 70px;
+		display: flex;
+		align-items: center;
+		background-color: #141414;
+		color: #fff;
+		font-weight: 700;
+		font-size: 20px;
+		min-width: 100%;
+	}
+	// .filter__body
+	&__body {
+	}
+	// .filter__section
+	&__section {
+	}
+}
+.section-filter {
+	// .section-filter__title
+	&__title {
+		font-weight: 600;
+		font-size: 20px;
+		padding: 15px 30px;
+		color: #fff;
+		background-color: #141414;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		&::before {
+			color: #e8aa31;
+			font-size: rem(7);
+			transition: transform 0.3s ease 0s;
+		}
+		// .section-filter__title_price
+		&_price {
+			background-color: #fff;
+			color: #000;
+		}
+		&._spoller-active {
+			&::before {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	// .section-filter__body
+	&__body {
+		padding: 20px 30px 30px;
+	}
+	// .section-filter__inputs
+	&__inputs {
+		display: flex;
+		margin-bottom: rem(30);
+	}
+	// .section-filter__input
+	&__input {
+		font-size: 16px;
+		color: #141414;
+		outline: #e8aa31;
+		min-height: 42px;
+		border: 1px solid #cbcbcb;
+	}
+	// .section-filter__slider
+	&__slider {
+		height: 2px;
+		margin-bottom: rem(30);
+	}
+	// .section-filter__checkbox
+	&__checkbox {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		& .checkbox {
+			// .checkbox__input
+			&__input {
+			}
+			// .checkbox__label
+			&__label {
+				&::before {
+					border: 1px solid rgba(0, 0, 0, 0.2);
+					border-radius: 2px;
+				}
+			}
+			// .checkbox__text
+			&__text {
+				display: flex;
+				gap: 15px;
+				color: #141414;
+				font-size: 16px;
+				small {
+					color: #e8aa31;
+					font-size: 16px;
+				}
+			}
+		}
+		&_rating {
+			align-items: center;
+			& .checkbox {
+				// .checkbox__input
+				&__input {
+				}
+				// .checkbox__label
+				&__label {
+					&::before {
+						align-self: center;
+					}
+					&::after {
+						top: 6px;
+					}
+				}
+				// .checkbox__text
+				&__text {
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					color: #141414;
+					font-size: 16px;
+					&::before {
+						content: "★★★★★";
+						display: block;
+						font-size: 25px;
+						color: #e8aa31;
+					}
+				}
+			}
+		}
+	}
+}
+//========================================================================================================================================================

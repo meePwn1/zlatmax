@@ -1,0 +1,222 @@
+// Заголовки, общие БЭМ блоки и прочее...
+.product-card {
+	background-color: #fefefe;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+	padding: 30px 20px;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100%;
+	transition: box-shadow 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	// .product-card__image
+	&__image {
+		display: block;
+		margin-bottom: rem(20);
+		@include adaptiveValue("padding-left", 30, 0, 0, 1590, 992);
+		@include adaptiveValue("padding-right", 30, 0, 0, 1590, 992);
+	}
+	// .product-card__item-image
+	&__item-image {
+		display: block;
+		padding-bottom: 89%;
+	}
+	// .product-card__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+	// .product-card__title
+	&__title {
+		display: inline-block;
+		color: #141414;
+		font-weight: 600;
+		font-size: 20px;
+		margin-bottom: rem(15);
+		flex: 1 1 auto;
+	}
+	// .product-card__info
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		margin-bottom: rem(20);
+	}
+	// .product-card__size
+	&__size {
+		color: #ababab;
+		font-size: 16px;
+		font-weight: 600;
+	}
+	// .product-card__materials
+	&__materials {
+		color: #ababab;
+		font-size: 16px;
+		font-weight: 600;
+		text-align: right;
+	}
+	// .product-card__rating
+	&__rating {
+		margin-bottom: 20px;
+	}
+	// .product-card__footer
+	&__footer {
+	}
+	// .product-card__button
+	&__button {
+		width: 100%;
+		min-width: 0;
+		flex-direction: row-reverse;
+		gap: 15px;
+		font-size: 18px;
+		&::before {
+			font-size: 18px;
+		}
+	}
+}
+
+.footer-product-card {
+	padding: 20px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+	border-top: 1px solid rgba(20, 20, 20, 0.5);
+	// .footer-product-card__price
+	&__price {
+		color: #141414;
+		font-size: 20px;
+		font-weight: 600;
+	}
+	// .footer-product-card__actions
+	&__actions {
+		display: flex;
+		gap: 15px;
+	}
+	// .footer-product-card__compare
+	&__compare {
+		&::before {
+			font-size: rem(25);
+			transition: color 0.3s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					color: #e8aa31;
+				}
+			}
+		}
+	}
+	// .footer-product-card__favorite
+	&__favorite {
+		&::before {
+			font-size: rem(25);
+			transition: color 0.3s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					color: #e8aa31;
+				}
+			}
+		}
+	}
+}
+//========================================================================================================================================================
+.text-footer {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: #000;
+		z-index: -2;
+	}
+	&::after {
+		content: "";
+		background: url("@img/footer/bg.jpg") 0 0 / cover no-repeat;
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.3;
+	}
+	// .text-footer__container
+	&__container {
+	}
+	// .text-footer__title
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: 0.03em;
+		color: #e8aa31;
+		margin-bottom: 50px;
+	}
+	// .text-footer__text
+	&__text {
+		letter-spacing: 0.03em;
+		line-height: math.div(27, 18);
+		color: #fff;
+		p {
+			margin-bottom: 30px;
+		}
+	}
+}
+//========================================================================================================================================================
+.title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #141414;
+}
+//========================================================================================================================================================
+
+.breadcrumbs {
+	// .breadcrumbs__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		@media (max-width: $mobileSmall) {
+			gap: 5px;
+		}
+	}
+	// .breadcrumbs__item
+	&__item {
+	}
+	// .breadcrumbs__link
+	&__link {
+		color: #141414;
+		opacity: 0.5;
+		font-size: 16px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		gap: 15px;
+		@media (max-width: $mobileSmall) {
+			gap: 5px;
+		}
+		&::before {
+			@extend %ic;
+			@extend ._icon-arrow;
+			font-size: 7px;
+			transform: rotate(-90deg);
+		}
+	}
+	// .breadcrumbs__current
+	&__current {
+		display: block;
+		font-size: 16px;
+		color: #e8aa31;
+	}
+}
